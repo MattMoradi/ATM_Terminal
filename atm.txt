@@ -1,0 +1,57 @@
+This is the structure of the ATM program;
+
+Main Function
+{
+	Read in bank data from a file
+	loop1 {
+		Print welcome message
+		loop2 {
+			prompt for account number
+			read account number
+			prompt for PIN number
+			read PIN number
+			validate account information
+			(get info about this account from bank file)
+			if invalid {
+				error message
+			} else {
+				loop3 {
+					prompt for transaction type
+					get transaction type
+					balance:
+						show balance
+					deposit:
+						do deposit transaction
+					withdrawn:
+						do withdrawl transaction
+					exit:
+						break both loop3 and loop2
+				} end loop3
+			}
+		} end loop2
+	} end loop1
+}
+
+Function to Read in bank data from a file
+{
+	declare variables
+	open bank file
+	if error return bad status
+	loop {
+		read in one record
+		check for EOF, if found break
+		increment pointer
+	}
+	return good status
+}
+
+function to validate account information
+{
+	loop {
+		compare account number and PIN to bank record
+		if match, return pointer to account information
+		increment pointer
+		if end of data, break
+	}
+	return error status
+}

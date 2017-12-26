@@ -1,0 +1,31 @@
+Input       Proccess        Output
+=========   =============   =================
+top_loop
+                            Welcome message
+acct_loop:
+                            Please enter your account number
+acct_num                    Please enter your PIN
+pin         Verify that acct
+            and PIN are in the
+            bank data       F: Invalid account or PIN
+            Go to acct_loop
+                            T: Welcome name
+                            display menu of commands
+                                Balance
+                                Deposit
+                                Withdrawl
+                                Exit
+                                Your Choice?
+
+txn_code    B:
+            get balance         Your balance is $100
+
+            D:                  How much?
+amount      balance += amount   Your new balance is $200
+
+            W:                  How much?
+amount      balance -= amount   Your new balance is $100
+
+            E:                  Thanks for using the ATM machine
+            close the account
+            go to top_loop
